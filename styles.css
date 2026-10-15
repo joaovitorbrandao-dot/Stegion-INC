@@ -58,3 +58,5 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.hero-sequence{height:auto}.hero-stage{position:relative;top:0}}
 
 .work-grid{align-items:start}.project-card:hover{text-decoration:none}
+
+.section-cta{position:relative;height:0;z-index:6;display:flex;justify-content:center}.section-cta .button{position:absolute;top:0;transform:translateY(-50%);min-height:52px;border:4px solid #fff;box-sizing:content-box}.section-cta + .work-section{border-top:1px solid var(--color-border)}
