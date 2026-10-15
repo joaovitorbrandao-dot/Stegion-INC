@@ -88,10 +88,23 @@ footer{border-top:1px solid var(--line);padding:56px 0}footer .wrap{display:flex
 .offer-header .wrap{display:flex;align-items:center;justify-content:center;gap:12px 24px;flex-wrap:wrap;text-align:center}
 .offer-header p{margin:0;font-weight:700;font-size:16px}
 .offer-header a{font-size:14px;font-weight:700;text-underline-offset:4px;color:#145BFF}
+
+.offer-clock{display:inline-flex;align-items:center;gap:10px;font-size:13px}
+.offer-clock strong{font-size:24px;font-variant-numeric:tabular-nums;letter-spacing:.04em;color:#07152F}
+.demo-popup[hidden]{display:none!important}
+.demo-popup{position:fixed;right:24px;bottom:24px;z-index:100;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;background:#fff;color:#000;border:2px solid #145BFF;border-radius:20px;padding:30px;box-shadow:0 16px 60px rgba(7,21,47,.24)}
+.demo-popup .popup-kicker{margin:0 36px 12px 0;font-size:12px;font-weight:800;letter-spacing:.08em;color:#145BFF;text-transform:uppercase}
+.demo-popup h2{font-size:clamp(26px,5vw,36px);line-height:1.07;margin:0 0 16px}
+.demo-popup p{font-size:15px;line-height:1.5;margin:0 0 20px;color:#444}
+.demo-popup .btn{font-size:15px;padding-left:20px}
+.demo-popup .popup-note{font-size:12px;margin:14px 0 0;color:#555}
+.popup-close{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#000;font-size:28px;cursor:pointer;border-radius:50%}
+.popup-close:hover{background:#eaf4ff}
+@media(max-width:520px){.demo-popup{right:16px;bottom:max(16px,env(safe-area-inset-bottom));padding:24px}.offer-header .wrap{gap:8px 16px}.offer-clock{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
-<header class="offer-header" aria-label="Free website preview offer"><div class="wrap"><p>Get Your Free Demo</p><a href="#free-preview" data-cta="offer-header">Get My Free Demo &rarr;</a></div></header>
+<header class="offer-header" aria-label="Free website preview offer"><div class="wrap"><p>Get Your Free Demo</p><span class="offer-clock"><span>Demo countdown</span><strong id="offerCountdown" role="timer" aria-label="Demo countdown" aria-live="off">01:30</strong></span><a id="offerHeaderCta" href="#free-preview" data-cta="offer-header">Get My Free Demo &rarr;</a></div></header>
 
 <main id="top">
 <section class="hero" id="hero" aria-label="Introduction">
@@ -181,6 +194,39 @@ document.getElementById("yr").textContent=new Date().getFullYear();
  ["pointerdown","touchstart","keydown"].forEach(function(t){window.addEventListener(t,function r(){if(v.paused)go();window.removeEventListener(t,r)},{passive:true})});
 })();
 (function(){if("IntersectionObserver" in window){new IntersectionObserver(function(en,ob){if(en[0].isIntersecting){track("form_section_view");ob.disconnect()}}).observe(document.getElementById("free-preview"))}})();
+</script>
+
+<aside id="demoPopup" class="demo-popup" role="dialog" aria-modal="false" aria-labelledby="demoPopupTitle" aria-describedby="demoPopupDescription" hidden>
+<button id="demoPopupClose" class="popup-close" type="button" aria-label="Close free demo offer">&times;</button>
+<p class="popup-kicker">Your business deserves better</p>
+<h2 id="demoPopupTitle">DON’T JUST EXIST ONLINE.<br>MAKE THEM CHOOSE YOU.</h2>
+<p id="demoPopupDescription">Give your business a website worth clicking. Get a free, personalized demo and see what your next first impression could look like.</p>
+<a id="demoPopupCta" class="btn" href="#free-preview" data-cta="demo-popup">Get My Free Demo</a>
+<p class="popup-note">No upfront payment. No commitment. Full development is a separate paid project.</p>
+</aside>
+<script>
+(function(){
+ var clock=document.getElementById("offerCountdown");
+ var popup=document.getElementById("demoPopup");
+ var close=document.getElementById("demoPopupClose");
+ var cta=document.getElementById("demoPopupCta");
+ var started=performance.now(),dismissed=-1,stopped=false;
+ function phase(){return Math.floor((performance.now()-started)/15000)}
+ function hide(){if(popup.contains(document.activeElement)){document.getElementById("offerHeaderCta").focus({preventScroll:true})}popup.hidden=true}
+ function update(){
+  var elapsed=Math.max(0,performance.now()-started);
+  var remaining=Math.max(0,90-Math.floor(elapsed/1000));
+  clock.textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+String(remaining%60).padStart(2,"0");
+  var current=phase();
+  if(!stopped&&current%2===1&&dismissed!==current){popup.hidden=false}else{hide()}
+ }
+ close.addEventListener("click",function(){dismissed=phase();hide()});
+ document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!popup.hidden){dismissed=phase();hide()}});
+ cta.addEventListener("click",function(){stopped=true;hide()});
+ document.getElementById("offerHeaderCta").addEventListener("click",function(){stopped=true;hide()});
+ update();
+ setInterval(update,250);
+})();
 </script>
 </body>
 </html>
