@@ -56,3 +56,5 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 @media(max-width:700px){.hero-stage{height:680px}.hero-media img{object-position:right center}.mobile-break{display:block}}
 @media(max-width:390px){.hero-title{font-size:56px;letter-spacing:-.025em}.project-caption{flex-wrap:wrap}.project-segment{order:3;width:100%}.project-segment::before{content:none}.header-button{font-size:11px;padding:8px 10px}.brand{font-size:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.hero-sequence{height:auto}.hero-stage{position:relative;top:0}}
+
+.work-grid{align-items:start}.project-card:hover{text-decoration:none}
