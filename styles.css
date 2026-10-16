@@ -297,15 +297,11 @@ button {
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 1.1fr);
-  gap: 56px;
-  align-items: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-block: 28px;
   position: relative;
   z-index: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-block: 36px;
 }
 
 .hero-copy {
@@ -1664,10 +1660,7 @@ button {
     --gutter: 32px;
   }
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  /* hero-container is single-column */
 
   .hero-copy {
     max-width: 100%;
