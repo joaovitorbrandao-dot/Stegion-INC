@@ -91,3 +91,16 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 .early-form-section .conversion-form{max-width:720px;margin-inline:auto}
 .early-form-section .form-intro{max-width:none}
 @media(max-width:800px){.conversion-grid{min-height:0}.conversion-hero{padding-bottom:28px}.conversion-copy{padding-block:20px}.conversion-hero::before{background:linear-gradient(90deg,rgba(9,17,30,.94),rgba(9,17,30,.55))}.early-form-section{padding-block:32px}}
+
+/* Explain the process beside the early form without delaying lead capture. */
+.process-form-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.how-it-works{padding-top:24px;min-width:0}
+.how-it-works h2{font-size:clamp(42px,4.5vw,64px)}
+.process-steps{list-style:none;padding:0;margin:32px 0 0}
+.process-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid #dce2eb}
+.process-number{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#e7efff;color:#0057ff;font-size:12px;font-weight:600}
+.process-steps h3{font-size:17px;line-height:1.4;letter-spacing:-.02em;margin:0 0 8px}
+.process-steps p{font-size:14px;line-height:1.7;color:#525866;margin:0;max-width:38ch}
+.early-form-section .conversion-form{width:100%;margin:0}
+@media(max-width:1000px){.process-form-grid{gap:32px}}
+@media(max-width:800px){.process-form-grid{grid-template-columns:1fr;gap:24px}.how-it-works{padding-top:0}.process-steps{margin-top:20px}.process-steps li{padding:16px 0;gap:14px}.process-steps p{max-width:none}.early-form-section .conversion-form{max-width:none}}
