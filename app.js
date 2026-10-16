@@ -50,20 +50,9 @@
     });
   }
 
-  // 3. Hero Full-Bleed Background Slider: All Images Filling the Entire Hero
+  // 3. Hero Pure Photo Slider: As Fotos Preenchendo 100% de todo o Hero
   const heroImages = document.querySelectorAll('.hero-backdrop');
   const heroDots = document.querySelectorAll('.hero-dot');
-  const previewLabel = document.getElementById('hero-preview-label');
-
-  const previewsInfo = [
-    'Live Preview: Northline Architecture',
-    'Live Preview: Mason Studio Barbershop',
-    'Live Preview: Luma Dental Healthcare',
-    'Live Preview: Clearhome Home Services',
-    'Live Preview: Nova Agency Tech Studio',
-    'Live Preview: Refine Executive Advisory',
-    'Live Preview: Ember Hospitality Dining'
-  ];
 
   if (heroImages.length > 0) {
     let currentHeroIndex = 0;
@@ -80,17 +69,13 @@
       heroDots.forEach((dot, i) => {
         dot.classList.toggle('is-active', i === currentHeroIndex);
       });
-
-      if (previewLabel && previewsInfo[currentHeroIndex]) {
-        previewLabel.textContent = previewsInfo[currentHeroIndex];
-      }
     };
 
     const startHeroRotation = () => {
       stopHeroRotation();
       heroTimer = setInterval(() => {
         setHeroSlide(currentHeroIndex + 1);
-      }, 4500);
+      }, 4200);
     };
 
     const stopHeroRotation = () => {
