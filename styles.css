@@ -60,3 +60,11 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 .work-grid{align-items:start}.project-card:hover{text-decoration:none}
 
 .section-cta{position:relative;height:0;z-index:6;display:flex;justify-content:center}.section-cta .button{position:absolute;top:0;transform:translateY(-50%);min-height:52px;border:4px solid #fff;box-sizing:content-box}.section-cta + .work-section{border-top:1px solid var(--color-border)}
+
+/* Place the copy within the open left side of the hero photograph. */
+.hero-copy{top:18%;left:3.5%;right:auto;width:36%;max-width:680px}
+.hero-title{font-size:clamp(44px,4.3vw,80px);line-height:1.02}
+.hero-title span{white-space:normal}
+.hero-subtitle{max-width:38ch}
+@media(max-width:900px){.hero-copy{top:14%;left:4%;width:43%;max-width:none}.hero-title{font-size:clamp(40px,5.2vw,48px)}.hero-subtitle{font-size:16px}}
+@media(max-width:700px){.hero-copy{top:60px;left:20px;right:20px;width:auto}.hero-title{font-size:clamp(40px,8vw,52px);max-width:500px}.hero-subtitle{max-width:30ch}}
