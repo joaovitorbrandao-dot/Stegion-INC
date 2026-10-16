@@ -1727,3 +1727,12 @@ button {
 @media(max-width:860px){.hero-copy{max-width:60%}.hero-backdrop{object-position:65% center}.hero-bottom-bar{flex-wrap:wrap;gap:12px}.hero-scroll-hint{font-size:12px}.hero-benefits{gap:10px 16px}.hero-carousel-controls{gap:10px}}
 @media(max-width:600px){.hero-section{min-height:100svh;padding-top:calc(var(--header-height) + 24px)}.hero-container{padding-block:24px}.hero-copy{max-width:100%}.hero-copy h1{font-size:clamp(42px,10vw,56px)}.hero-description{max-width:32ch}.hero-backdrop{object-position:72% center}.hero-image-shade{background:linear-gradient(90deg,rgba(5,12,22,.88),rgba(5,12,22,.52)),linear-gradient(0deg,rgba(5,12,22,.65),transparent 45%)}.hero-image-dots{order:3;width:100%;justify-content:space-between}.hero-dot{width:32px}.hero-carousel-controls{width:100%;justify-content:space-between}.hero-social-proof{margin-bottom:20px}.hero-bottom-bar{margin-top:0}}
 @media(prefers-reduced-motion:reduce){.hero-backdrop{transition:none}}
+
+/* Metrics share the hero photograph, rather than revealing the white body. */
+.hero-section{padding-bottom:0}
+.hero-section>.metrics-bar-transparent{position:relative;z-index:2;flex-shrink:0;background:transparent;color:#fff;box-shadow:none;border-top:1px solid rgba(255,255,255,.18);border-bottom:0;padding-block:32px;margin-top:24px}
+.metrics-bar-transparent .metric-number,.metrics-bar-transparent .metric-text strong{color:#fff}
+.metrics-bar-transparent .metric-text span{color:#d3dfee}
+.metrics-bar-transparent .metric-item{border-left-color:rgba(255,255,255,.24)}
+.metrics-bar-transparent .metric-item:first-child{border-left-color:#6fa7ff}
+@media(max-width:600px){.hero-section>.metrics-bar-transparent{padding-block:28px}.metrics-bar-transparent .metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.metrics-bar-transparent .metric-item{display:block;padding-left:12px}.metrics-bar-transparent .metric-number{font-size:40px}.metrics-bar-transparent .metric-text{margin-top:8px}.metrics-bar-transparent .metric-text strong{font-size:13px}.metrics-bar-transparent .metric-text span{font-size:11px}}
