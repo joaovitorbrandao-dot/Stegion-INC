@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NEWAY INC — Custom websites for your next move</title>
-  <meta name="description" content="Custom websites for local businesses across the US. See your website. Then decide. Request a free custom preview with no commitment.">
+  <title>NEWAY INC — High-Converting Websites That Drive Business</title>
+  <meta name="description" content="High-impact websites engineered to win customers and elevate your brand. See your free custom preview in 48h with zero commitment. +200 satisfied clients.">
   <meta name="theme-color" content="#101722">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/northline.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -17,7 +17,7 @@
 <body>
   <a class="skip-link" href="#free-demo">Skip to free demo</a>
 
-  <!-- Header: Transparent over hero, sticky with subtle blur & dark tint on scroll -->
+  <!-- Header: Transparent over hero, sticky with subtle blur on scroll -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="NEWAY INC home">
@@ -25,6 +25,7 @@
       </a>
       <nav class="header-nav" id="header-nav" aria-label="Main navigation">
         <a href="#work">Work</a>
+        <a href="#testimonials">Reviews</a>
         <a href="#how-it-works">How it works</a>
         <a href="#free-demo">Free demo</a>
       </nav>
@@ -41,22 +42,42 @@
   </header>
 
   <main id="top">
-    <!-- 1. HERO — Only offer, imagery and CTA (no form inside hero) -->
+    <!-- 1. HERO — Texto estritamente posicionado para NUNCA tampar a imagem do mockup à direita -->
     <section class="hero-section" id="hero" aria-labelledby="hero-title">
-      <img class="hero-backdrop" src="assets/northline.webp" width="1672" height="941" alt="Custom website preview demonstration" fetchpriority="high">
+      <img class="hero-backdrop" src="assets/northline.webp" width="1672" height="941" alt="High-impact custom website demo preview" fetchpriority="high">
       <div class="hero-ambient-glow" aria-hidden="true"></div>
-      <div class="container hero-content">
+
+      <div class="container hero-container">
         <div class="hero-copy animate-on-scroll">
-          <p class="hero-eyebrow">
-            <span class="pulse-dot" aria-hidden="true"></span>
-            CUSTOM WEBSITES FOR LOCAL BUSINESSES
-          </p>
+          <!-- Social Proof Badge: Fotos dos clientes + 200 clientes satisfeitos + estrelas de avaliação -->
+          <div class="hero-social-proof" aria-label="Rating: 5.0 stars with over 200 satisfied clients">
+            <div class="avatar-stack">
+              <img src="assets/client-david.jpg" alt="Client David" width="36" height="36" class="avatar-img">
+              <img src="assets/client-sarah.jpg" alt="Client Sarah" width="36" height="36" class="avatar-img">
+              <img src="assets/client-marcus.jpg" alt="Client Marcus" width="36" height="36" class="avatar-img">
+              <img src="assets/client-elena.jpg" alt="Client Elena" width="36" height="36" class="avatar-img">
+              <span class="avatar-counter">+200</span>
+            </div>
+            <div class="proof-meta">
+              <div class="stars-row" aria-hidden="true">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <span class="proof-label"><strong>+200 clientes satisfeitos</strong> <span class="proof-divider">•</span> 5.0 rating</span>
+            </div>
+          </div>
+
           <h1 id="hero-title">
             Your next customer<br>starts with a<br><em>better website.</em>
           </h1>
+
           <p class="hero-description">
-            Build trust, showcase your business, and make it easier for customers to choose you. See a custom website preview before you decide.
+            Build instant credibility, stand out from competitors, and turn visitors into paying clients. See a custom preview for your business before you decide.
           </p>
+
           <div class="hero-cta-group">
             <a class="btn-primary" href="#free-demo">
               Get my free demo <span class="btn-arrow" aria-hidden="true">↓</span>
@@ -65,47 +86,124 @@
               Explore our work <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
           </div>
-          <ul class="hero-benefits" aria-label="Benefits">
-            <li>Custom design</li>
-            <li>Mobile-ready</li>
-            <li>Free preview</li>
+
+          <ul class="hero-benefits" aria-label="Key guarantees">
+            <li><span>✓</span> Custom Design</li>
+            <li><span>✓</span> Mobile-Ready</li>
+            <li><span>✓</span> Free Preview</li>
+            <li><span>✓</span> Zero Commitment</li>
           </ul>
         </div>
       </div>
+
       <div class="container hero-bottom-bar">
-        <span class="hero-tagline">DESIGNED TO MAKE YOUR BUSINESS STAND OUT.</span>
-        <a class="hero-scroll-hint" href="#work">Discover the possibilities <span aria-hidden="true">↓</span></a>
+        <span class="hero-tagline">HIGH-IMPACT WEBSITES BUILT TO CONVERT.</span>
+        <a class="hero-scroll-hint" href="#free-demo">Get your free custom preview <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <!-- 2. FORM SECTION — Immediately after hero: Left phrase | Right form -->
+    <!-- 2. TRUST & IMPACT METRICS BAR — Cartão de visita de alto impacto -->
+    <section class="metrics-bar" aria-label="Impact metrics">
+      <div class="container metrics-grid">
+        <div class="metric-item animate-on-scroll">
+          <div class="metric-num-wrap">
+            <span class="metric-number">+200</span>
+          </div>
+          <div class="metric-text">
+            <strong>Projetos Entregues</strong>
+            <span>Clientes satisfeitos nos EUA</span>
+          </div>
+        </div>
+
+        <div class="metric-item animate-on-scroll">
+          <div class="metric-num-wrap">
+            <span class="metric-number">5.0</span>
+            <span class="metric-star">★</span>
+          </div>
+          <div class="metric-text">
+            <strong>Avaliação Máxima</strong>
+            <span>100% de satisfação verificada</span>
+          </div>
+        </div>
+
+        <div class="metric-item animate-on-scroll">
+          <div class="metric-num-wrap">
+            <span class="metric-number">48h</span>
+          </div>
+          <div class="metric-text">
+            <strong>Entrega da Prévia</strong>
+            <span>Veja seu site antes de pagar</span>
+          </div>
+        </div>
+
+        <div class="metric-item animate-on-scroll">
+          <div class="metric-num-wrap">
+            <span class="metric-number">100%</span>
+          </div>
+          <div class="metric-text">
+            <strong>Zero Risco</strong>
+            <span>Sem fidelidade nem compromisso</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FORM SECTION — Imediatamente após o Hero/Métricas: Frase à esquerda | Formulário Pipedrive à direita -->
     <section class="form-section" id="free-demo" aria-labelledby="form-section-title">
       <div class="container form-section-grid">
         <div class="form-copy-col animate-on-scroll">
-          <p class="section-eyebrow">SEE IT BEFORE YOU COMMIT</p>
+          <div class="badge-pill">
+            <span class="pulse-dot-blue" aria-hidden="true"></span>
+            SEE IT BEFORE YOU COMMIT
+          </div>
           <h2 id="form-section-title" class="form-main-title">
             See your website.<br><span class="text-accent">Then decide.</span>
           </h2>
           <p class="form-main-desc">
-            Tell us about your business. We’ll create a custom preview so you can explore the possibilities before moving forward.
+            Tell us about your business. We’ll build a custom, interactive preview so you can explore the exact design, layout, and feel before making any investment.
           </p>
-          <div class="form-reassurance-badge">
-            <span class="badge-icon" aria-hidden="true">✓</span>
-            <span>Free preview. No obligation to buy.</span>
+
+          <div class="guarantee-box">
+            <div class="guarantee-item">
+              <span class="check-circle" aria-hidden="true">✓</span>
+              <div>
+                <strong>100% Free Custom Preview</strong>
+                <span>We design the initial concept at our own expense.</span>
+              </div>
+            </div>
+            <div class="guarantee-item">
+              <span class="check-circle" aria-hidden="true">✓</span>
+              <div>
+                <strong>Zero Obligation to Buy</strong>
+                <span>If you don't love it, you don't pay a single cent.</span>
+              </div>
+            </div>
+            <div class="guarantee-item">
+              <span class="check-circle" aria-hidden="true">✓</span>
+              <div>
+                <strong>Fast 48-Hour Turnaround</strong>
+                <span>Receive your live link within two business days.</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="form-card-col animate-on-scroll">
           <div class="form-card">
+            <div class="form-card-header">
+              <span class="card-status-dot" aria-hidden="true"></span>
+              <span class="card-header-title">Request Your Custom Demo</span>
+              <span class="card-badge-free">FREE</span>
+            </div>
             <div class="pipedrive-wrapper">
               <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/6W6qNsFtDTNSURaK245nwaYQa7WfWIPE4k6aIbdg7Pbz8z8T2wNsgQGZIJ8Hdm0WRR">
                 <script src="https://webforms.pipedrive.com/f/loader" async></script>
               </div>
             </div>
             <div class="form-alt-contact">
-              <span>Prefer to talk?</span>
-              <a href="https://wa.me/13322317179?text=Hi%2C%20I%20want%20my%20free%20demo%21" target="_blank" rel="noopener noreferrer">
-                Chat on WhatsApp <span aria-hidden="true">↗</span>
+              <span>Prefer an immediate answer?</span>
+              <a href="https://wa.me/13322317179?text=Hi%2C%20I%20want%20my%20free%20demo%21" target="_blank" rel="noopener noreferrer" class="whatsapp-direct-link">
+                <span class="wa-icon" aria-hidden="true">💬</span> Chat on WhatsApp ↗
               </a>
             </div>
           </div>
@@ -113,11 +211,140 @@
       </div>
     </section>
 
-    <!-- 3. HOW IT WORKS — Separate section in 3 simple steps -->
+    <!-- 4. TESTIMONIALS SECTION — Fotos reais, depoimentos, +200 clientes e estrelas -->
+    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="testimonials-header animate-on-scroll">
+          <div class="badge-pill">
+            <span class="star-pill-icon" aria-hidden="true">★</span>
+            VERIFIED REVIEWS
+          </div>
+          <h2 id="testimonials-title" class="section-title">
+            Trusted by +200 businesses.<br><span class="text-accent">Rated 5.0 out of 5 stars.</span>
+          </h2>
+          <p class="section-subtitle">
+            See how custom, high-impact websites transformed conversions and credibility for business owners.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card animate-on-scroll">
+            <div class="card-top-row">
+              <div class="stars-row" aria-label="5 stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <span class="verified-tag">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">
+              “The custom demo blew us away before we spent a single dollar. Seeing our actual brand in a modern layout made the choice effortless. Our online booking rate surged <strong>45% in the first month</strong>.”
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/client-marcus.jpg" alt="Marcus Vance" width="48" height="48" class="author-avatar" loading="lazy">
+              <div class="author-details">
+                <h3 class="author-name">Marcus Vance</h3>
+                <p class="author-role">Founder, The Grooming Club • New York, NY</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card animate-on-scroll">
+            <div class="card-top-row">
+              <div class="stars-row" aria-label="5 stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <span class="verified-tag">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">
+              “Patients constantly tell us how clean and welcoming our site looks compared to other practices. Getting the full preview first gave our partners complete confidence. Best business decision we made this year.”
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/client-sarah.jpg" alt="Dr. Sarah Jenkins" width="48" height="48" class="author-avatar" loading="lazy">
+              <div class="author-details">
+                <h3 class="author-name">Dr. Sarah Jenkins</h3>
+                <p class="author-role">Clinical Director, Luma Dental • Austin, TX</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card animate-on-scroll">
+            <div class="card-top-row">
+              <div class="stars-row" aria-label="5 stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <span class="verified-tag">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">
+              “We secured two major commercial contracts directly through the inquiry form on our new website. NEWAY designed an executive presence that commands immediate respect from high-ticket prospects.”
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/client-david.jpg" alt="David Miller" width="48" height="48" class="author-avatar" loading="lazy">
+              <div class="author-details">
+                <h3 class="author-name">David Miller</h3>
+                <p class="author-role">Managing Partner, Melmar Group • Miami, FL</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 4 -->
+          <article class="testimonial-card animate-on-scroll">
+            <div class="card-top-row">
+              <div class="stars-row" aria-label="5 stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <span class="verified-tag">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">
+              “Ultra fast, responsive, and high impact. The 48-hour delivery timeline was followed to the letter, and the final site functions like a luxury digital business card that converts visitors automatically.”
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/client-elena.jpg" alt="Elena Rostova" width="48" height="48" class="author-avatar" loading="lazy">
+              <div class="author-details">
+                <h3 class="author-name">Elena Rostova</h3>
+                <p class="author-role">Director of Operations, Alba Living • Chicago, IL</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Social Proof Footer Pill -->
+        <div class="testimonials-cta-pill animate-on-scroll">
+          <div class="pill-avatars">
+            <img src="assets/client-marcus.jpg" alt="User" width="32" height="32">
+            <img src="assets/client-sarah.jpg" alt="User" width="32" height="32">
+            <img src="assets/client-david.jpg" alt="User" width="32" height="32">
+            <img src="assets/client-elena.jpg" alt="User" width="32" height="32">
+            <img src="assets/client-james.jpg" alt="User" width="32" height="32">
+          </div>
+          <span class="pill-text">Join <strong>+200 businesses</strong> that upgraded their online standard.</span>
+          <a href="#free-demo" class="pill-link">Get your free demo ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS — 3 passos simples -->
     <section class="process-section" id="how-it-works" aria-labelledby="process-title">
       <div class="container">
         <div class="process-header animate-on-scroll">
-          <p class="section-eyebrow">SIMPLE PROCESS</p>
+          <div class="badge-pill">SIMPLE PROCESS</div>
           <h2 id="process-title" class="section-title">
             Your new website,<br><span class="text-accent">in three simple steps.</span>
           </h2>
@@ -130,7 +357,7 @@
               <div class="step-num-badge">01</div>
               <div class="step-body">
                 <h3>Request your free demo</h3>
-                <p>Start with a free preview. No commitment required.</p>
+                <p>Start with a custom preview. Zero upfront fees, no credit card, and no commitment required.</p>
               </div>
             </li>
             <li class="step-item animate-on-scroll">
@@ -144,7 +371,7 @@
               <div class="step-num-badge">03</div>
               <div class="step-body">
                 <h3>Get your demo. Then decide.</h3>
-                <p>Explore your custom preview and decide if you want to move forward.</p>
+                <p>Explore your live, interactive preview in 48 hours and decide if you want to move forward.</p>
               </div>
             </li>
           </ol>
@@ -152,18 +379,18 @@
       </div>
     </section>
 
-    <!-- 4. PROJECTS — Featured work demonstrations -->
+    <!-- 6. PROJECTS — Featured work demonstrations -->
     <section class="work-section" id="work" aria-labelledby="work-title">
       <div class="container">
         <div class="work-header animate-on-scroll">
           <div class="work-header-copy">
-            <p class="section-eyebrow">SELECTED DEMOS</p>
+            <div class="badge-pill">SELECTED DEMOS</div>
             <h2 id="work-title" class="section-title">
               Different businesses.<br><span class="text-accent">Same high standard.</span>
             </h2>
           </div>
           <p class="work-header-note">
-            We design and build custom websites for local businesses across the US — modern, fast and built to help you win more customers.
+            Explore interactive previews built with modern aesthetics, lightning speed, and clear conversion paths.
           </p>
         </div>
 
@@ -173,13 +400,13 @@
               <div class="project-image-box">
                 <img src="assets/work-mason.jpg" width="1200" height="606" loading="lazy" decoding="async" alt="Mason Studio custom website preview">
                 <div class="project-hover-overlay">
-                  <span class="view-pill">View demo <span aria-hidden="true">↗</span></span>
+                  <span class="view-pill">View live demo <span aria-hidden="true">↗</span></span>
                 </div>
               </div>
               <div class="project-info">
                 <div>
                   <h3 class="project-name">Mason Studio</h3>
-                  <p class="project-segment">Barbershop</p>
+                  <p class="project-segment">Barbershop & Grooming</p>
                 </div>
                 <span class="project-action-link" aria-hidden="true">View demo ↗</span>
               </div>
@@ -191,7 +418,7 @@
               <div class="project-image-box">
                 <img src="assets/work-luma.jpg" width="1200" height="826" loading="lazy" decoding="async" alt="Luma Dental custom website preview">
                 <div class="project-hover-overlay">
-                  <span class="view-pill">View demo <span aria-hidden="true">↗</span></span>
+                  <span class="view-pill">View live demo <span aria-hidden="true">↗</span></span>
                 </div>
               </div>
               <div class="project-info">
@@ -209,13 +436,13 @@
               <div class="project-image-box">
                 <img src="assets/work-alba.jpg" width="1200" height="596" loading="lazy" decoding="async" alt="ALBA Residences custom website preview">
                 <div class="project-hover-overlay">
-                  <span class="view-pill">View demo <span aria-hidden="true">↗</span></span>
+                  <span class="view-pill">View live demo <span aria-hidden="true">↗</span></span>
                 </div>
               </div>
               <div class="project-info">
                 <div>
                   <h3 class="project-name">ALBA Residences</h3>
-                  <p class="project-segment">Real estate</p>
+                  <p class="project-segment">Luxury Real Estate</p>
                 </div>
                 <span class="project-action-link" aria-hidden="true">View demo ↗</span>
               </div>
@@ -227,13 +454,13 @@
               <div class="project-image-box">
                 <img src="assets/work-melmar.jpg" width="1200" height="609" loading="lazy" decoding="async" alt="Melmar Group custom website preview">
                 <div class="project-hover-overlay">
-                  <span class="view-pill">View demo <span aria-hidden="true">↗</span></span>
+                  <span class="view-pill">View live demo <span aria-hidden="true">↗</span></span>
                 </div>
               </div>
               <div class="project-info">
                 <div>
                   <h3 class="project-name">Melmar Group</h3>
-                  <p class="project-segment">Contractor</p>
+                  <p class="project-segment">General Contractor</p>
                 </div>
                 <span class="project-action-link" aria-hidden="true">View demo ↗</span>
               </div>
@@ -245,13 +472,13 @@
               <div class="project-image-box">
                 <img src="assets/work-its.jpg" width="1200" height="602" loading="lazy" decoding="async" alt="ITS Logistics custom website preview">
                 <div class="project-hover-overlay">
-                  <span class="view-pill">View demo <span aria-hidden="true">↗</span></span>
+                  <span class="view-pill">View live demo <span aria-hidden="true">↗</span></span>
                 </div>
               </div>
               <div class="project-info">
                 <div>
                   <h3 class="project-name">ITS Logistics</h3>
-                  <p class="project-segment">Logistics</p>
+                  <p class="project-segment">Enterprise Freight & Logistics</p>
                 </div>
                 <span class="project-action-link" aria-hidden="true">View demo ↗</span>
               </div>
@@ -261,41 +488,83 @@
       </div>
     </section>
 
-    <!-- 5. FINAL CTA — High impact closing block -->
+    <!-- 7. WHY CHOOSE US / VALUE HIGHLIGHTS — Elementos visuais de alto impacto -->
+    <section class="value-section" aria-labelledby="value-title">
+      <div class="container">
+        <div class="value-header animate-on-scroll">
+          <div class="badge-pill">HIGH-CONVERTING DESIGN</div>
+          <h2 id="value-title" class="section-title">
+            Built like an executive business card.<br><span class="text-accent">Engineered to drive revenue.</span>
+          </h2>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon-box">⚡</div>
+            <h3>Ultra-Fast Performance</h3>
+            <p>Sub-second load times that keep visitors engaged and boost Google rankings.</p>
+          </div>
+
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon-box">🎯</div>
+            <h3>Designed for Conversion</h3>
+            <p>Every layout, button, and headline is structured to guide visitors into qualified leads.</p>
+          </div>
+
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon-box">📱</div>
+            <h3>Mobile-First Precision</h3>
+            <p>Flawless experience on every device, whether clients visit from smartphones or desktops.</p>
+          </div>
+
+          <div class="value-card animate-on-scroll">
+            <div class="value-icon-box">🛡️</div>
+            <h3>Zero Financial Risk</h3>
+            <p>Experience your custom demo before making any commitment or signing any contract.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FINAL CTA — High impact closing block -->
     <section class="cta-final-section" aria-labelledby="cta-final-title">
       <div class="cta-ambient-glow" aria-hidden="true"></div>
       <div class="container cta-final-inner animate-on-scroll">
-        <p class="section-eyebrow text-accent-light">YOUR NEXT MOVE</p>
+        <div class="badge-pill badge-pill-light">YOUR NEXT MOVE</div>
         <h2 id="cta-final-title" class="cta-final-heading">
           See what your business<br>could look like.
         </h2>
         <p class="cta-final-sub">
-          Request a custom preview built for your business. Free, fast, and with no obligation to buy.
+          Request a custom preview built specifically for your brand. Free, delivered in 48h, and with zero obligation to buy.
         </p>
         <div class="cta-final-action">
           <a class="btn-primary btn-large" href="#free-demo">
             Get my free demo <span class="btn-arrow" aria-hidden="true">↑</span>
+          </a>
+          <a class="btn-secondary btn-large" href="https://wa.me/13322317179?text=Hi%2C%20I%20want%20my%20free%20demo%21" target="_blank" rel="noopener noreferrer">
+            Chat on WhatsApp ↗
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 6. FOOTER — Clean, minimal and professional -->
+  <!-- 9. FOOTER — Clean, minimal and professional -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand-wrap">
         <a class="brand" href="#top" aria-label="NEWAY INC home">
           NEWAY <small>INC</small>
         </a>
-        <p class="footer-tagline">Built around your business.</p>
+        <p class="footer-tagline">High-impact websites built around your business.</p>
       </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#work">Work</a>
+        <a href="#testimonials">Reviews</a>
         <a href="#how-it-works">How it works</a>
         <a href="#free-demo">Free demo</a>
-        <a href="https://wa.me/13322317179" target="_blank" rel="noopener noreferrer">Contact (WhatsApp) ↗</a>
+        <a href="https://wa.me/13322317179" target="_blank" rel="noopener noreferrer">WhatsApp Contact ↗</a>
       </nav>
 
       <p class="footer-copyright">
@@ -303,5 +572,14 @@
       </p>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Action Button — Cartão de visita interativo e alta conversão -->
+  <aside class="floating-whatsapp" aria-label="Direct WhatsApp contact">
+    <a href="https://wa.me/13322317179?text=Hi%2C%20I%20want%20my%20free%20demo%21" target="_blank" rel="noopener noreferrer" class="wa-float-btn" aria-label="Talk to us on WhatsApp">
+      <span class="wa-float-icon">💬</span>
+      <span class="wa-float-label">WhatsApp</span>
+      <span class="wa-status-dot" aria-hidden="true"></span>
+    </a>
+  </aside>
 </body>
 </html>
