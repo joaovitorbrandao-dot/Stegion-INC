@@ -50,95 +50,71 @@
     });
   }
 
-  // 3. Hero Showcase: Multi-Image Auto Rotation & Smooth Transitions
-  const slides = document.querySelectorAll('.showcase-slide');
-  const dots = document.querySelectorAll('.slider-dot');
-  const counterEl = document.getElementById('showcase-counter');
-  const titleEl = document.getElementById('showcase-title');
-  const urlEl = document.getElementById('showcase-url');
-  const prevBtn = document.getElementById('slide-prev');
-  const nextBtn = document.getElementById('slide-next');
-  const showcaseFrame = document.querySelector('.showcase-frame');
+  // 3. Hero Full-Bleed Background Slider: All Images Filling the Entire Hero
+  const heroImages = document.querySelectorAll('.hero-backdrop');
+  const heroDots = document.querySelectorAll('.hero-dot');
+  const previewLabel = document.getElementById('hero-preview-label');
 
-  if (slides.length > 0) {
-    let currentSlide = 0;
-    let slideTimer = null;
-    const totalSlides = slides.length;
+  const previewsInfo = [
+    'Live Preview: Northline Architecture',
+    'Live Preview: Mason Studio Barbershop',
+    'Live Preview: Luma Dental Healthcare',
+    'Live Preview: Clearhome Home Services',
+    'Live Preview: Nova Agency Tech Studio',
+    'Live Preview: Refine Executive Advisory',
+    'Live Preview: Ember Hospitality Dining'
+  ];
 
-    const showSlide = (index) => {
-      currentSlide = (index + totalSlides) % totalSlides;
+  if (heroImages.length > 0) {
+    let currentHeroIndex = 0;
+    let heroTimer = null;
+    const totalHeroImages = heroImages.length;
 
-      slides.forEach((slide, i) => {
-        const isActive = i === currentSlide;
-        slide.classList.toggle('is-active', isActive);
+    const setHeroSlide = (idx) => {
+      currentHeroIndex = (idx + totalHeroImages) % totalHeroImages;
+
+      heroImages.forEach((img, i) => {
+        img.classList.toggle('is-active', i === currentHeroIndex);
       });
 
-      dots.forEach((dot, i) => {
-        const isActive = i === currentSlide;
-        dot.classList.toggle('is-active', isActive);
-        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      heroDots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === currentHeroIndex);
       });
 
-      const activeSlide = slides[currentSlide];
-      const name = activeSlide.dataset.name || '';
-      const segment = activeSlide.dataset.segment || '';
-      const url = activeSlide.dataset.url || '';
-
-      if (counterEl) {
-        counterEl.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
-      }
-      if (titleEl) {
-        titleEl.textContent = `${name} — ${segment}`;
-      }
-      if (urlEl) {
-        urlEl.textContent = url;
+      if (previewLabel && previewsInfo[currentHeroIndex]) {
+        previewLabel.textContent = previewsInfo[currentHeroIndex];
       }
     };
 
-    const startTimer = () => {
-      stopTimer();
-      slideTimer = setInterval(() => {
-        showSlide(currentSlide + 1);
-      }, 4200);
+    const startHeroRotation = () => {
+      stopHeroRotation();
+      heroTimer = setInterval(() => {
+        setHeroSlide(currentHeroIndex + 1);
+      }, 4500);
     };
 
-    const stopTimer = () => {
-      if (slideTimer) {
-        clearInterval(slideTimer);
-        slideTimer = null;
+    const stopHeroRotation = () => {
+      if (heroTimer) {
+        clearInterval(heroTimer);
+        heroTimer = null;
       }
     };
 
-    dots.forEach((dot) => {
+    heroDots.forEach((dot) => {
       dot.addEventListener('click', () => {
-        const idx = parseInt(dot.dataset.slide, 10);
-        showSlide(idx);
-        startTimer();
+        const idx = parseInt(dot.dataset.index, 10);
+        setHeroSlide(idx);
+        startHeroRotation();
       });
     });
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-        startTimer();
-      });
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', stopHeroRotation);
+      heroSection.addEventListener('mouseleave', startHeroRotation);
     }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-        startTimer();
-      });
-    }
-
-    if (showcaseFrame) {
-      showcaseFrame.addEventListener('mouseenter', stopTimer);
-      showcaseFrame.addEventListener('mouseleave', startTimer);
-      showcaseFrame.addEventListener('touchstart', stopTimer, { passive: true });
-      showcaseFrame.addEventListener('touchend', startTimer, { passive: true });
-    }
-
-    startTimer();
+    startHeroRotation();
   }
 
   // 4. Testimonials Marquee: Infinite Horizontal Scroll
