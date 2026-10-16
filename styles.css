@@ -104,3 +104,19 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 .early-form-section .conversion-form{width:100%;margin:0}
 @media(max-width:1000px){.process-form-grid{gap:32px}}
 @media(max-width:800px){.process-form-grid{grid-template-columns:1fr;gap:24px}.how-it-works{padding-top:0}.process-steps{margin-top:20px}.process-steps li{padding:16px 0;gap:14px}.process-steps p{max-width:none}.early-form-section .conversion-form{max-width:none}}
+
+/* The form and process each occupy a separate full-width page section. */
+.early-form-section{padding-block:80px;background:#fff;border-bottom:1px solid var(--color-border)}
+.standalone-form{width:100%;max-width:760px;margin-inline:auto}
+.standalone-form>.form-eyebrow,.standalone-form>h2,.standalone-form>.form-intro{text-align:center}
+.standalone-form>h2{font-size:clamp(44px,4.5vw,64px)}
+.standalone-form>h2 span{color:var(--color-primary)}
+.standalone-form>.form-intro{font-size:16px;max-width:48ch;margin:20px auto 32px}
+.standalone-form>.form-container{padding:16px;border:1px solid var(--color-border);border-radius:12px;min-height:460px}
+.standalone-form>.whatsapp-link{margin-top:20px}
+.process-section{background:var(--color-surface);padding-block:80px}
+.process-section .how-it-works{padding:0}
+.process-section .process-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.process-section .process-steps li{display:block;padding-top:24px}
+.process-section .process-number{margin-bottom:20px}
+@media(max-width:800px){.early-form-section,.process-section{padding-block:48px}.process-section .process-steps{grid-template-columns:1fr;gap:8px}.process-section .process-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px}.process-section .process-number{margin:0}.standalone-form>.form-container{padding:8px}}
