@@ -625,12 +625,12 @@ button {
    2. TRUST & IMPACT METRICS BAR (Attachment 1)
    ========================================================================== */
 .metrics-bar {
-  background-color: #FFFFFF;
+  background-color: transparent;
   color: var(--color-text-main);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding-block: 44px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  box-shadow: none;
 }
 
 .metrics-grid {
