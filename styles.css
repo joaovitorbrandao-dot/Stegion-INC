@@ -107,16 +107,18 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 
 /* The form and process each occupy a separate full-width page section. */
 .early-form-section{padding-block:80px;background:#fff;border-bottom:1px solid var(--color-border)}
-.standalone-form{width:100%;max-width:760px;margin-inline:auto}
-.standalone-form>.form-eyebrow,.standalone-form>h2,.standalone-form>.form-intro{text-align:center}
-.standalone-form>h2{font-size:clamp(44px,4.5vw,64px)}
-.standalone-form>h2 span{color:var(--color-primary)}
-.standalone-form>.form-intro{font-size:16px;max-width:48ch;margin:20px auto 32px}
-.standalone-form>.form-container{padding:16px;border:1px solid var(--color-border);border-radius:12px;min-height:460px}
-.standalone-form>.whatsapp-link{margin-top:20px}
+.lead-section-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:start}
+.lead-section-copy{min-width:0}
+.lead-section-copy .form-eyebrow{margin-bottom:16px}
+.lead-section-copy h2{font-size:clamp(44px,4.5vw,72px)}
+.lead-section-copy h2 span{color:var(--color-primary)}
+.lead-section-copy .form-intro{font-size:16px;line-height:1.6;max-width:40ch;margin:24px 0 0}
+.lead-section-form{min-width:0}
+.lead-section-form .form-container{padding:8px;border:1px solid var(--color-border);border-radius:12px;min-height:460px}
+.lead-section-form .whatsapp-link{margin-top:16px}
 .process-section{background:var(--color-surface);padding-block:80px}
 .process-section .how-it-works{padding:0}
 .process-section .process-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
 .process-section .process-steps li{display:block;padding-top:24px}
 .process-section .process-number{margin-bottom:20px}
-@media(max-width:800px){.early-form-section,.process-section{padding-block:48px}.process-section .process-steps{grid-template-columns:1fr;gap:8px}.process-section .process-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px}.process-section .process-number{margin:0}.standalone-form>.form-container{padding:8px}}
+@media(max-width:800px){.early-form-section,.process-section{padding-block:48px}.process-section .process-steps{grid-template-columns:1fr;gap:8px}.process-section .process-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px}.process-section .process-number{margin:0}.lead-section-grid{grid-template-columns:1fr;gap:32px}.lead-section-form .form-container{padding:8px}}
