@@ -81,3 +81,13 @@ dialog{max-width:min(1200px,calc(100vw - 32px));max-height:calc(100dvh - 32px);w
 @media(max-width:1100px){.conversion-grid{gap:32px}.conversion-copy h1{font-size:64px}.conversion-form{padding:24px 18px}}
 @media(max-width:800px){.conversion-grid{grid-template-columns:1fr;gap:28px}.conversion-hero{padding-top:112px;border-radius:0 0 32px 32px}.conversion-copy{padding:0}.conversion-copy h1{font-size:clamp(48px,9vw,70px)}.hero-eyebrow{margin-bottom:20px}.conversion-description{max-width:48ch;margin:20px 0;font-size:15px}.hero-benefits{margin:20px 0 0;padding-top:16px}.conversion-form{width:100%;max-width:560px;justify-self:center;padding:24px 20px}.conversion-form h2{font-size:38px}.hero-bottom{margin-top:28px}.hero-bottom>span{display:none}.conversion-backdrop{object-position:65% center}.conversion-hero::before{background:linear-gradient(180deg,rgba(9,17,30,.87),rgba(9,17,30,.97))}}
 @media(max-width:390px){.hero-eyebrow{font-size:8px;letter-spacing:.1em}.conversion-copy h1{font-size:46px}.hero-benefits{gap:8px 14px;font-size:10px}}
+
+/* Keep lead capture in its own section immediately after the hero. */
+.conversion-grid{grid-template-columns:minmax(0,1fr);min-height:calc(88svh - 200px)}
+.conversion-copy{max-width:640px}
+.hero-benefits{max-width:560px}
+.conversion-hero::before{background:linear-gradient(90deg,rgba(9,17,30,.94),rgba(9,17,30,.76) 45%,rgba(9,17,30,.15))}
+.early-form-section{padding-block:56px;background:#f7f8fa}
+.early-form-section .conversion-form{max-width:720px;margin-inline:auto}
+.early-form-section .form-intro{max-width:none}
+@media(max-width:800px){.conversion-grid{min-height:0}.conversion-hero{padding-bottom:28px}.conversion-copy{padding-block:20px}.conversion-hero::before{background:linear-gradient(90deg,rgba(9,17,30,.94),rgba(9,17,30,.55))}.early-form-section{padding-block:32px}}
