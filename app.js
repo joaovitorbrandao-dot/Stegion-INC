@@ -50,14 +50,11 @@
     });
   }
 
-  // Full-bleed original hero images; keep automatic and manual controls in sync.
+  // Full-bleed hero photography with automatic transitions.
   const hero = document.getElementById('hero');
   const heroImages = Array.from(document.querySelectorAll('.hero-backdrop'));
-  const heroDots = Array.from(document.querySelectorAll('.hero-dot'));
-  const rotationButton = document.querySelector('.hero-rotation-toggle');
-  const slideLabel = document.getElementById('hero-slide-label');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  if (hero && heroImages.length && rotationButton) {
+  if (hero && heroImages.length) {
     let current = 0, timer = null, request = 0;
     let paused = reducedMotion.matches;
     const stop = () => { clearTimeout(timer); timer = null; };
@@ -79,28 +76,16 @@
       if (ready) {
         current = next;
         heroImages.forEach((image, i) => image.classList.toggle('is-active', i === current));
-        heroDots.forEach((dot, i) => {
-          dot.classList.toggle('is-active', i === current);
-          dot.setAttribute('aria-pressed', String(i === current));
-        });
-        slideLabel.textContent = String(current + 1).padStart(2, '0') + ' / 08 · ' + heroDots[current].dataset.label;
         void load((current + 1) % heroImages.length);
       }
       schedule();
     };
-    const syncPauseButton = () => {
-      rotationButton.textContent = paused ? 'Play' : 'Pause';
-      rotationButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
-      rotationButton.setAttribute('aria-pressed', String(paused));
-    };
-    heroDots.forEach((dot, index) => dot.addEventListener('click', () => { void show(index); }));
-    rotationButton.addEventListener('click', () => {
-      paused = !paused; syncPauseButton(); schedule();
-    });
     document.addEventListener('visibilitychange', schedule);
     reducedMotion.addEventListener('change', () => {
-      paused = reducedMotion.matches; syncPauseButton(); schedule();
+      paused = reducedMotion.matches; schedule();
     });
+    hero.addEventListener('focusin', stop);
+    hero.addEventListener('focusout', schedule);
     let touchStart = null;
     hero.addEventListener('touchstart', event => {
       if (event.touches.length === 1 && !event.target.closest('a,button,input,textarea,select')) {
@@ -115,7 +100,6 @@
       if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) void show(current + (dx < 0 ? 1 : -1));
     }, { passive: true });
     hero.addEventListener('touchcancel', () => { touchStart = null; }, { passive: true });
-    syncPauseButton();
     void load(1);
     schedule();
   }

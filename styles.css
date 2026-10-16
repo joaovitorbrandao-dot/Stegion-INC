@@ -1736,3 +1736,8 @@ button {
 .metrics-bar-transparent .metric-item{border-left-color:rgba(255,255,255,.24)}
 .metrics-bar-transparent .metric-item:first-child{border-left-color:#6fa7ff}
 @media(max-width:600px){.hero-section>.metrics-bar-transparent{padding-block:28px}.metrics-bar-transparent .metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.metrics-bar-transparent .metric-item{display:block;padding-left:12px}.metrics-bar-transparent .metric-number{font-size:40px}.metrics-bar-transparent .metric-text{margin-top:8px}.metrics-bar-transparent .metric-text strong{font-size:13px}.metrics-bar-transparent .metric-text span{font-size:11px}}
+
+/* Keep the hero free of divider lines and slideshow chrome. */
+.hero-section .hero-benefits{border-top:0}
+.hero-section>.metrics-bar-transparent{border:0}
+.hero-section .metrics-bar-transparent .metric-item{border:0}
