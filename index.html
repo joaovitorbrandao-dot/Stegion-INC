@@ -45,11 +45,22 @@
   <main id="top">
     <!-- 1. HERO — Transparent Header integration, copy on left, interactive multi-image showcase with transitions on right -->
     <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="hero-backgrounds" aria-hidden="true">
+        <img class="hero-backdrop is-active" src="assets/northline.webp" width="1672" height="941" alt="" fetchpriority="high">
+        <img class="hero-backdrop" data-src="assets/nova.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/clearhome.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/luma.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/mason.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/refine.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/ember.webp" width="1672" height="941" alt="" decoding="async">
+        <img class="hero-backdrop" data-src="assets/form-grain.webp" width="1672" height="941" alt="" decoding="async">
+      </div>
+      <div class="hero-image-shade" aria-hidden="true"></div>
       <div class="hero-ambient-glow" aria-hidden="true"></div>
 
       <div class="container hero-container">
         <!-- Coluna Esquerda: Texto de Impacto -->
-        <div class="hero-copy animate-on-scroll">
+        <div class="hero-copy">
           <!-- Social Proof Badge: Fotos dos clientes + 200 clientes satisfeitos + estrelas SVG -->
           <div class="hero-social-proof" aria-label="Rating: 5.0 stars with over 200 satisfied clients">
             <div class="avatar-stack">
@@ -108,87 +119,24 @@
           </ul>
         </div>
 
-        <!-- Coluna Direita: Showcase Dinâmico com TODAS as imagens do Hero e Efeitos de Transição Profissionais -->
-        <div class="hero-showcase animate-on-scroll" aria-label="Showcase of recent custom website demonstrations">
-          <div class="showcase-frame">
-            <div class="showcase-header">
-              <div class="browser-dots" aria-hidden="true">
-                <span class="browser-dot red"></span>
-                <span class="browser-dot yellow"></span>
-                <span class="browser-dot green"></span>
-              </div>
-              <div class="showcase-url-bar" id="showcase-url">newayinc.com/preview/northline</div>
-              <div class="showcase-badge" id="showcase-badge">Live Demo</div>
-            </div>
-
-            <div class="showcase-viewport" id="hero-slider">
-              <!-- Slide 1: Northline -->
-              <div class="showcase-slide is-active" data-index="0" data-name="Northline" data-segment="Real Estate & Architecture" data-url="newayinc.com/preview/northline">
-                <img src="assets/northline.webp" width="1672" height="941" alt="Northline Architecture & Real Estate website demo" fetchpriority="high">
-              </div>
-
-              <!-- Slide 2: Mason Studio -->
-              <div class="showcase-slide" data-index="1" data-name="Mason Studio" data-segment="Barbershop & Grooming" data-url="newayinc.com/preview/mason-studio">
-                <img src="assets/mason.webp" width="1672" height="941" alt="Mason Studio Barbershop website demo" loading="lazy">
-              </div>
-
-              <!-- Slide 3: Luma Dental -->
-              <div class="showcase-slide" data-index="2" data-name="Luma Dental" data-segment="Modern Healthcare Practice" data-url="newayinc.com/preview/luma-dental">
-                <img src="assets/luma.webp" width="1672" height="941" alt="Luma Dental healthcare practice website demo" loading="lazy">
-              </div>
-
-              <!-- Slide 4: Clearhome -->
-              <div class="showcase-slide" data-index="3" data-name="Clearhome" data-segment="Home Services & Renovation" data-url="newayinc.com/preview/clearhome">
-                <img src="assets/clearhome.webp" width="1672" height="941" alt="Clearhome home services website demo" loading="lazy">
-              </div>
-
-              <!-- Slide 5: Nova -->
-              <div class="showcase-slide" data-index="4" data-name="Nova Agency" data-segment="Creative & Tech Studio" data-url="newayinc.com/preview/nova-agency">
-                <img src="assets/nova.webp" width="1672" height="941" alt="Nova creative and technology studio website demo" loading="lazy">
-              </div>
-
-              <!-- Slide 6: Refine -->
-              <div class="showcase-slide" data-index="5" data-name="Refine Consulting" data-segment="Executive Advisory" data-url="newayinc.com/preview/refine">
-                <img src="assets/refine.webp" width="1672" height="941" alt="Refine executive consulting website demo" loading="lazy">
-              </div>
-
-              <!-- Slide 7: Ember -->
-              <div class="showcase-slide" data-index="6" data-name="Ember Hospitality" data-segment="Restaurant & Artisan Dining" data-url="newayinc.com/preview/ember">
-                <img src="assets/ember.webp" width="1672" height="941" alt="Ember artisan dining website demo" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Showcase HUD & Controls -->
-            <div class="showcase-controls">
-              <div class="showcase-meta">
-                <span class="showcase-index" id="showcase-counter">01 / 07</span>
-                <span class="showcase-title" id="showcase-title">Northline — Architecture</span>
-              </div>
-              <div class="showcase-dots" id="showcase-dots" role="tablist" aria-label="Showcase slides">
-                <button class="slider-dot is-active" type="button" data-slide="0" aria-label="View Northline demo" aria-selected="true"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="1" aria-label="View Mason Studio demo" aria-selected="false"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="2" aria-label="View Luma Dental demo" aria-selected="false"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="3" aria-label="View Clearhome demo" aria-selected="false"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="4" aria-label="View Nova demo" aria-selected="false"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="5" aria-label="View Refine demo" aria-selected="false"><span class="dot-fill"></span></button>
-                <button class="slider-dot" type="button" data-slide="6" aria-label="View Ember demo" aria-selected="false"><span class="dot-fill"></span></button>
-              </div>
-              <div class="showcase-arrows">
-                <button class="slider-arrow" id="slide-prev" type="button" aria-label="Previous slide">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <button class="slider-arrow" id="slide-next" type="button" aria-label="Next slide">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Hero Bottom Bar -->
       <div class="container hero-bottom-bar">
-        <span class="hero-tagline">HIGH-IMPACT WEBSITES BUILT TO CONVERT.</span>
+        <div class="hero-carousel-controls" role="group" aria-label="Hero slideshow">
+        <span class="hero-slide-label" id="hero-slide-label">01 / 08 · Logistics</span>
+        <div class="hero-image-dots">
+          <button class="hero-dot is-active" type="button" data-index="0" data-label="Logistics" aria-label="Show Logistics" aria-pressed="true"><span></span></button>
+          <button class="hero-dot" type="button" data-index="1" data-label="Creative studio" aria-label="Show Creative studio" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="2" data-label="Cleaning" aria-label="Show Cleaning" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="3" data-label="Dental practice" aria-label="Show Dental practice" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="4" data-label="Barbershop" aria-label="Show Barbershop" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="5" data-label="Auto detailing" aria-label="Show Auto detailing" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="6" data-label="Restaurant" aria-label="Show Restaurant" aria-pressed="false"><span></span></button>
+          <button class="hero-dot" type="button" data-index="7" data-label="Remodeling" aria-label="Show Remodeling" aria-pressed="false"><span></span></button>
+        </div>
+        <button class="hero-rotation-toggle" type="button" aria-label="Pause slideshow" aria-pressed="false">Pause</button>
+      </div>
         <a class="hero-scroll-hint" href="#free-demo">Get your free custom preview <span aria-hidden="true">↓</span></a>
       </div>
     </section>

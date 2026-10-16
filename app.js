@@ -50,56 +50,74 @@
     });
   }
 
-  // 3. Hero Pure Photo Slider: As Fotos Preenchendo 100% de todo o Hero
-  const heroImages = document.querySelectorAll('.hero-backdrop');
-  const heroDots = document.querySelectorAll('.hero-dot');
-
-  if (heroImages.length > 0) {
-    let currentHeroIndex = 0;
-    let heroTimer = null;
-    const totalHeroImages = heroImages.length;
-
-    const setHeroSlide = (idx) => {
-      currentHeroIndex = (idx + totalHeroImages) % totalHeroImages;
-
-      heroImages.forEach((img, i) => {
-        img.classList.toggle('is-active', i === currentHeroIndex);
-      });
-
-      heroDots.forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === currentHeroIndex);
-      });
+  // Full-bleed original hero images; keep automatic and manual controls in sync.
+  const hero = document.getElementById('hero');
+  const heroImages = Array.from(document.querySelectorAll('.hero-backdrop'));
+  const heroDots = Array.from(document.querySelectorAll('.hero-dot'));
+  const rotationButton = document.querySelector('.hero-rotation-toggle');
+  const slideLabel = document.getElementById('hero-slide-label');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (hero && heroImages.length && rotationButton) {
+    let current = 0, timer = null, request = 0;
+    let paused = reducedMotion.matches;
+    const stop = () => { clearTimeout(timer); timer = null; };
+    const load = async (index) => {
+      const image = heroImages[index];
+      if (image.dataset.src) { image.src = image.dataset.src; delete image.dataset.src; }
+      try { await image.decode(); return image.naturalWidth > 0; } catch { return false; }
     };
-
-    const startHeroRotation = () => {
-      stopHeroRotation();
-      heroTimer = setInterval(() => {
-        setHeroSlide(currentHeroIndex + 1);
-      }, 4200);
+    const schedule = () => {
+      stop();
+      if (!paused && !document.hidden) timer = setTimeout(() => show(current + 1), 5500);
     };
-
-    const stopHeroRotation = () => {
-      if (heroTimer) {
-        clearInterval(heroTimer);
-        heroTimer = null;
+    const show = async (index) => {
+      stop();
+      const next = (index + heroImages.length) % heroImages.length;
+      const token = ++request;
+      const ready = await load(next);
+      if (token !== request) return;
+      if (ready) {
+        current = next;
+        heroImages.forEach((image, i) => image.classList.toggle('is-active', i === current));
+        heroDots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === current);
+          dot.setAttribute('aria-pressed', String(i === current));
+        });
+        slideLabel.textContent = String(current + 1).padStart(2, '0') + ' / 08 · ' + heroDots[current].dataset.label;
+        void load((current + 1) % heroImages.length);
       }
+      schedule();
     };
-
-    heroDots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const idx = parseInt(dot.dataset.index, 10);
-        setHeroSlide(idx);
-        startHeroRotation();
-      });
+    const syncPauseButton = () => {
+      rotationButton.textContent = paused ? 'Play' : 'Pause';
+      rotationButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      rotationButton.setAttribute('aria-pressed', String(paused));
+    };
+    heroDots.forEach((dot, index) => dot.addEventListener('click', () => { void show(index); }));
+    rotationButton.addEventListener('click', () => {
+      paused = !paused; syncPauseButton(); schedule();
     });
-
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-      heroSection.addEventListener('mouseenter', stopHeroRotation);
-      heroSection.addEventListener('mouseleave', startHeroRotation);
-    }
-
-    startHeroRotation();
+    document.addEventListener('visibilitychange', schedule);
+    reducedMotion.addEventListener('change', () => {
+      paused = reducedMotion.matches; syncPauseButton(); schedule();
+    });
+    let touchStart = null;
+    hero.addEventListener('touchstart', event => {
+      if (event.touches.length === 1 && !event.target.closest('a,button,input,textarea,select')) {
+        touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+      } else touchStart = null;
+    }, { passive: true });
+    hero.addEventListener('touchend', event => {
+      if (!touchStart) return;
+      const dx = event.changedTouches[0].clientX - touchStart.x;
+      const dy = event.changedTouches[0].clientY - touchStart.y;
+      touchStart = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) void show(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    hero.addEventListener('touchcancel', () => { touchStart = null; }, { passive: true });
+    syncPauseButton();
+    void load(1);
+    schedule();
   }
 
   // 4. Testimonials Marquee: Infinite Horizontal Scroll
